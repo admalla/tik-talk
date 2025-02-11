@@ -1,0 +1,24 @@
+import {Component, inject} from '@angular/core';
+import {ProfileService} from 'src/app/data/services/profile.service';
+import {Profile} from 'src/app/data/interfaces/profile.interface';
+import {ProfileCardComponent} from 'src/app/common-ui/profile-card/profile-card.component';
+
+@Component({
+  selector: 'app-search-page',
+  imports: [
+    ProfileCardComponent
+  ],
+  templateUrl: './search-page.component.html',
+  standalone: true,
+  styleUrl: './search-page.component.scss'
+})
+export class SearchPageComponent {
+  profileService = inject(ProfileService)
+  profiles: Profile[] = []
+
+  constructor() {
+    this.profileService.getTestAccounts().subscribe(value => {
+      this.profiles = value
+    })
+  }
+}

@@ -1,0 +1,15 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100dvh;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.eye-closed-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: auto;
+  cursor: pointer;
+}
