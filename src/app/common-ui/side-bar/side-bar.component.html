@@ -1,1 +1,53 @@
-<p>side-bar works!</p>
+<img
+  src="/assets/imgs/tik.png"
+  alt="logo"
+  width="50"
+  class="ml16 mb20"
+>
+
+<nav>
+  <ul class="main-menu-list">
+    @for (item of menuItems; track item.icon) {
+      <li>
+        <button class="menu-item">
+          <svg class="home-icon" [icon]="item.icon"></svg>
+          <span>{{ item.label }}</span>
+        </button>
+      </li>
+    }
+  </ul>
+</nav>
+
+<p class="medium-text mb20">
+  Подписчики
+</p>
+
+@for (profile of subscribers$ | async; track profile.id) {
+  <app-subscriber-card [profile]="profile"></app-subscriber-card>
+}
+
+<div class="to-subscribers mt20">
+  <a
+    [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
+  >
+    Все подписчики
+  </a>
+  <img src="/assets/svg/arrow.svg" width="12" alt="arrow">
+</div>
+
+<footer class="sidebar__footer">
+  @if (me(); as me) {
+    @if (me.avatarUrl) {
+      <img [src]="me.avatarUrl | imgUrl" alt="avatar">
+    } @else {
+      <img src="/assets/imgs/avatar.png" alt="avatar">
+    }
+
+    <div class="meduim-text username-text">{{ me.username }}</div>
+
+    <a [routerLink]="['settings']" class="settings-btn">
+      <svg icon="settings" width="16" height="16"></svg>
+    </a>
+  }
+</footer>
+
