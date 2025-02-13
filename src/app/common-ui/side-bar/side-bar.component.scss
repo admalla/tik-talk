@@ -27,14 +27,15 @@
   width: 100%;
   text-align: left;
   border-radius: 2px;
+  text-decoration: none;
 
   &:hover,
   &:focus-visible {
     background: var(--hover-color);
-    color: var(--premary-color);
+    color: var(--primary-color);
 
     .home-icon {
-      color: var(--premary-color);
+      color: var(--primary-color);
     }
   }
 }
@@ -59,7 +60,7 @@
 
   .username-text {
     font-weight: 700;
-    color: var(--premary-color);
+    color: var(--primary-color);
   }
 }
 
@@ -67,7 +68,7 @@
   svg {
     width: 13px;
     height: 13px;
-    color: var(--premary-color);
+    color: var(--primary-color);
   }
 }
 
@@ -88,6 +89,6 @@
 }
 
 .to-subscribers-link {
-  color: var(--premary-color);
+  color: var(--primary-color);
   text-decoration: none;
 }

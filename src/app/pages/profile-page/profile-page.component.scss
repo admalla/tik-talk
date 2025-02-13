@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px;
 }
 
 .to-settings-btn {
@@ -15,4 +16,59 @@
 .to-settings-icon {
   width: 16px;
   height: 16px;
+}
+
+.profile-page__body {
+  display: grid;
+  grid-gap: 64px;
+  grid-template-columns: 1fr 350px;
+  padding: 24px;
+}
+
+.subscribers-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.subscriber-avatar-btn {
+  width: 36px;
+  height: 36px;
+
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
+
+.to-subscribers-search {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--light-color);
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 8px;
+    background: var(--dark-color);
+    left: 45%;
+  }
+
+  &:before {
+    transform: translateY(50%) translateX(50%);
+  }
+
+  &:after {
+    transform: translateY(50%) translateX(50%) rotate(90deg);
+  }
+}
+
+.stack-wrapper {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
 }
