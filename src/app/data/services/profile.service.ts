@@ -1,7 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Profile } from 'src/app/data/interfaces/profile.interface';
-import {map, Observable, take, tap} from "rxjs";
+import {map, tap} from "rxjs";
 import {Pageble} from "src/app/data/interfaces/pageble.interface";
 
 @Injectable({
@@ -38,5 +38,12 @@ export class ProfileService {
       .pipe(
         map(res => res.items.slice(0, subsAmount))
       )
+  }
+
+  uploadAvatar(file: File) {
+    const fd = new FormData();
+    fd.append('image', file);
+
+    return this.http.post<Profile>(`${this.baseApiUrl}account/upload_image`, fd)
   }
 }
