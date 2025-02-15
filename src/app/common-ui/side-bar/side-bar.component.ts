@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {SvgIconComponent} from 'src/app/common-ui/svg-icon/svg-icon.component';
 import {SubscriberCardComponent} from 'src/app/common-ui/side-bar/subscriber-card/subscriber-card.component';
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 import {ProfileService} from "src/app/data/services/profile.service";
 import {AsyncPipe} from "@angular/common";
 import {firstValueFrom} from "rxjs";
@@ -14,7 +14,8 @@ import {ImgUrlPipe} from "src/app/helpers/pipes/img-url.pipe";
     SubscriberCardComponent,
     RouterLink,
     AsyncPipe,
-    ImgUrlPipe
+    ImgUrlPipe,
+    RouterLinkActive
   ],
   templateUrl: './side-bar.component.html',
   standalone: true,
